@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body ng-app="ngClassifieds" ng-controller="classifiedsCtrl">
+	<h1>Hello {{name.first + ' ' + name.last}}</h1>
+	
+	<custom-directive></custom-directive>
+	
+	<div class="containter">
+		<input type="text" name="test" placeholder="Enter your name" ng-model="name.first"/>	
+	</div>
+
+	<script type="text/javascript" src="node_modules/angular/angular.js"></script>
+	<script type="text/javascript" src="node_modules/angular-animate/angular-animate.js"></script>
+	<script type="text/javascript" src="node_modules/angular-aria/angular-aria.js"></script>
+	<script type="text/javascript" src="node_modules/angular-material/angular-material.js"></script>
+	<script type="text/javascript" src="scripts/app.js"></script>
+	<script type="text/javascript" src="components/classifieds.ctr.js"></script>
+</body>
+</html>
