@@ -9,8 +9,14 @@ angular/**
 		.primaryPalette('teal')
 		.accentPalette('orange');
 })
-.directive("customDirective", function(){
-	return{
-		template: "<h1>{{ message }}</h1>"
-	}
+.directive("bgImg", function(){
+	return function (scope, element, attributes){
+			var url = attributes.bgImg;
+			element.css({
+				'background-image' : 'url(' + url + ')',
+				'background-size' : 'contain',
+				'background-repeat' : 'no-repeat',
+				'background-position' : 'center'
+			})
+		}	
 });
