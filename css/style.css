@@ -3,7 +3,7 @@
 }
 
 img{
-	height: 100%;
+	width: 100%;
 }
 
 .classified-image{
@@ -18,4 +18,26 @@ button .material-icon{
 
 .classified-admin{
 	background-color: #EAEAEA;
+}
+
+.classified.ng-enter, .classified.ng-move{
+	transition: 0.4s all;
+	opacity:0 ;
+}
+
+.classified.ng-enter.ng-enter-active, .classified.ng-move.ng-move-active{
+	opacity: 1;
+}
+
+.classified.ng-leave{
+	animation: 0.4s fadeClassified;
+}
+
+@keyframes fadeClassified{
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
 }
