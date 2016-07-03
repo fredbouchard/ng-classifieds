@@ -7,9 +7,11 @@
 			
 			//This is a capture variable
 			var vm = this;
+			vm.classifieds = classifiedsFactory.ref;
 			vm.closeSideBar = closeSideBar;
-			vm.classified = $state.params.classified;
+			vm.classified = vm.classifieds.$getRecord($state.params.id);
 			vm.saveEditClassified = saveEditClassified;
+
 
 			$timeout(function(){
 				$mdSidenav('left').open();
@@ -30,8 +32,11 @@
 			}
 
 			function saveEditClassified(){
-				$scope.$emit('editSaved', vm.classified.title + ' Edited!')
-				vm.sideNavOpen = false;
+				vm.classifieds.$save(vm.classified).then(function(){
+					$scope.$emit('editSaved', vm.classified.title + ' Edited!')
+					vm.sideNavOpen = false;
+				})
+				
 			}
 			
 		});

@@ -1,15 +1,32 @@
 angular/**
 * ngClassfields Module
 *
-* Description
+*  Here we set up an angular module. We'll attach controllers and 
+*  other components to this module.
 */
-.module("ngClassifieds", ["ngMaterial", "ui.router"])
+.module("ngClassifieds", ["ngMaterial", "ui.router", "firebase"])
+ 	// Angular supports chaining, so here we chain the config function onto
+    // the module we're configuring.
 .config(function($mdThemingProvider, $stateProvider) {
-	$mdThemingProvider.theme('default')
+	
+	 // We use AngularJS dependency injection to fetch the route provider.
+     // The state provider is used to setup our app's routes. 
+
+     // The config below simply says when you visit '/' it'll render
+     // the components/classifieds/classifieds.tpl.html template controlled by the MainCtrl controller.
+
+
+
+    $mdThemingProvider.theme('default')
 		.primaryPalette('teal')
 		.accentPalette('orange');
 
 	$stateProvider
+		.state('auth', {
+			url: '/auth',
+			templateUrl: './components/auth/auth.tpl.html',
+			controller: 'authCtrl as vm'
+		})
 		.state('classifieds', {
 			url: '/classifieds',
 			templateUrl: './components/classifieds/classifieds.tpl.html',

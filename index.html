@@ -4,13 +4,27 @@
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="./node_modules/angular-material/angular-material.css">
 	<link rel="stylesheet" type="text/css" href="./node_modules/mdi/css/materialdesignicons.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="./css/styles.css">
 </head>
 <body ng-app="ngClassifieds" ng-Cloak>
 	
 	<ui-view></ui-view>
 
 	<script type="text/javascript" src="./node_modules/angular/angular.js"></script>
+	<!-- Firebase -->
+	<script src="https://www.gstatic.com/firebasejs/3.0.3/firebase.js"></script>
+	<!-- AngularFire -->
+	<script src="https://cdn.firebase.com/libs/angularfire/2.0.0/angularfire.min.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyCZDKnLa-oif8iBKFw6YCPk6f3t88E9eHs",
+	    authDomain: "ngclassifieds-5d665.firebaseapp.com",
+	    databaseURL: "https://ngclassifieds-5d665.firebaseio.com",
+	    storageBucket: "ngclassifieds-5d665.appspot.com",
+	  };
+	  firebase.initializeApp(config);
+	</script>
 	<script type="text/javascript" src="./node_modules/angular-ui-router/release/angular-ui-router.js"></script>
 	<script type="text/javascript" src="./node_modules/angular-animate/angular-animate.js"></script>
 	<script type="text/javascript" src="./node_modules/angular-aria/angular-aria.js"></script>
@@ -18,6 +32,8 @@
 	<script type="text/javascript" src="./scripts/app.js"></script>
 	<script type="text/javascript" src="./components/classifieds/classifieds.ctr.js"></script>
 	<script type="text/javascript" src="./components/classifieds/classifieds.fac.js"></script>
+	<script type="text/javascript" src="./components/auth/auth.ctr.js"></script>
+	<script type="text/javascript" src="./components/auth/auth.fac.js"></script>
 	<script type="text/javascript" src="./components/classifieds/new/classifieds.new.ctr.js"></script>
 	<script type="text/javascript" src="./components/classifieds/edit/classifieds.edit.ctr.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.13.1/lodash.min.js"></script>
