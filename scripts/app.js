@@ -49,6 +49,7 @@ angular/**
 })
 .directive("bgImg", function(){
 	return function (scope, element, attributes){
+
 			var url = attributes.bgImg;
 			element.css({
 				'background-image' : 'url(' + url + ')',
